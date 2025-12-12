@@ -1,4 +1,3 @@
-# config.py
 import torch
 
 # Đường dẫn file dữ liệu 
@@ -6,22 +5,22 @@ TRAIN_EN_PATH = 'Data/train/train.en'
 TRAIN_FR_PATH = 'Data/train/train.fr'
 VAL_EN_PATH = 'Data/val/val.en'
 VAL_FR_PATH = 'Data/val/val.fr'
-TEST_EN_PATH = 'Data/test/test2016/test_2016.1.en'
-TEST_FR_PATH = 'Data/test/test2016/test_2016_flickr.fr'
+TEST_EN_PATH = 'Data/test/test2018/test_2018_flickr.en'
+TEST_FR_PATH = 'Data/test/test2018/test_2018_flickr.fr'
 
 # Cấu hình Model 
 INPUT_DIM = 10000  
 OUTPUT_DIM = 10000
-ENC_EMB_DIM = 516
-DEC_EMB_DIM = 516
-HID_DIM = 512     
+ENC_EMB_DIM = 256
+DEC_EMB_DIM = 256
+HID_DIM = 256     
 N_LAYERS = 2      
 ENC_DROPOUT = 0.5
 DEC_DROPOUT = 0.5
 
 # Huấn luyện
-BATCH_SIZE = 128
-N_EPOCHS = 20      
+BATCH_SIZE = 64
+N_EPOCHS = 30      
 LEARNING_RATE = 0.001
 CLIP = 1           # Gradient clipping
 

@@ -3,12 +3,12 @@ import torch.nn as nn
 import torch.optim as optim
 import time
 import math
-import matplotlib.pyplot as plt  # Thư viện vẽ biểu đồ
+import matplotlib.pyplot as plt  
 from config import *
 from data_utils import get_dataloaders
 from model import Encoder, Decoder, Seq2Seq
 
-# --- CLASS EARLY STOPPING (Yêu cầu Phần 8 - Điểm 1.5) ---
+# --- CLASS EARLY STOPPING  ---
 class EarlyStopping:
     def __init__(self, patience=3, min_delta=0):
         """
@@ -34,14 +34,14 @@ def init_weights(m):
     for name, param in m.named_parameters():
         nn.init.uniform_(param.data, -0.08, 0.08)
 
-def train_epoch(model, iterator, optimizer, criterion, clip):
+def train_epoch(model, iterator, optimizer, criterion, clip, teacher_forcing_ratio):
     model.train()
     epoch_loss = 0
     for i, (src, trg, src_len) in enumerate(iterator):
         src, trg = src.to(DEVICE), trg.to(DEVICE)
         
         optimizer.zero_grad()
-        output = model(src, trg, src_len)
+        output = model(src, trg, src_len, teacher_forcing_ratio)
         
         output_dim = output.shape[-1]
         output = output[1:].view(-1, output_dim)
@@ -87,8 +87,11 @@ if __name__ == "__main__":
     
     model.apply(init_weights)
     
-    optimizer = optim.Adam(model.parameters(), lr=LEARNING_RATE)
-    criterion = nn.CrossEntropyLoss(ignore_index=TRG_PAD_IDX)
+    optimizer = optim.Adam(model.parameters(), lr=LEARNING_RATE, weight_decay=1e-5)
+    # Label smoothing to reduce overfitting
+    criterion = nn.CrossEntropyLoss(ignore_index=TRG_PAD_IDX, label_smoothing=0.1)
+    # LR scheduler to adapt learning rate
+    scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, mode='min', factor=0.5, patience=2, verbose=True)
     
     # Kích hoạt Early Stopping
     early_stopper = EarlyStopping(patience=3)
@@ -100,11 +103,13 @@ if __name__ == "__main__":
     print(f"Bắt đầu huấn luyện trên {DEVICE}...")
     print(f"Early Stopping patience: 3 epochs")
     
+    teacher_forcing_ratio = 0.6
     for epoch in range(N_EPOCHS):
         start_time = time.time()
         
-        train_loss = train_epoch(model, train_loader, optimizer, criterion, CLIP)
+        train_loss = train_epoch(model, train_loader, optimizer, criterion, CLIP, teacher_forcing_ratio)
         valid_loss = evaluate(model, val_loader, criterion)
+        scheduler.step(valid_loss)
         
         # Lưu loss vào list
         train_losses.append(train_loss)
@@ -127,6 +132,8 @@ if __name__ == "__main__":
         print(f'Epoch: {epoch+1:02} | Time: {int(epoch_mins)}m {int(epoch_secs)}s')
         print(f'\tTrain Loss: {train_loss:.3f} | Val Loss: {valid_loss:.3f}')
         print(f'\tTrain PPL: {math.exp(train_loss):.3f} | Val PPL: {math.exp(valid_loss):.3f}')
+        # Decay teacher forcing ratio each epoch to encourage autonomy
+        teacher_forcing_ratio = max(0.2, teacher_forcing_ratio * 0.95)
         
         if early_stopper.early_stop:
             print("Dừng huấn luyện sớm do Loss không giảm (Early Stopping)!")

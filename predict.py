@@ -20,14 +20,17 @@ def translate_sentence(sentence, model, vocab_en, vocab_fr, device, max_len=50):
     src_len = torch.LongTensor([len(tokens)])
     
     with torch.no_grad():
-        hidden, cell = model.encoder(src_tensor, src_len)
+        encoder_outputs, hidden, cell = model.encoder(src_tensor, src_len)
         
     trg_indexes = [vocab_fr['<sos>']]
     
     for i in range(max_len):
         trg_tensor = torch.LongTensor([trg_indexes[-1]]).to(device)
         with torch.no_grad():
-            output, hidden, cell = model.decoder(trg_tensor, hidden, cell)
+            # Build a simple mask: all positions up to src_len are valid
+            mask = torch.zeros(1, src_tensor.size(0), dtype=torch.bool, device=device)
+            mask[0, :src_len.item()] = 1
+            output, hidden, cell = model.decoder(trg_tensor, hidden, cell, encoder_outputs, mask)
         
         pred_token = output.argmax(1).item()
         trg_indexes.append(pred_token)
@@ -93,7 +96,6 @@ if __name__ == "__main__":
         print(f"PRED: {pred_sent}")
         print("-" * 30)
         
-    # --- TÍNH BLEU ---
-    # Chạy trên tập test
+    # --- BLEU score ---
     score = calculate_bleu(test_loader, model, vocab_en, vocab_fr, DEVICE)
     print(f'BLEU score trên tập Test: {score*100:.2f}')

@@ -1,4 +1,3 @@
-# data_utils.py (Phiên bản KHÔNG DÙNG torchtext)
 import torch
 import spacy
 import io
@@ -48,7 +47,7 @@ class Vocab:
     def set_default_index(self, index):
         self.default_index = index
 
-# 1. Dataset Class
+#Dataset Class
 class EnFrDataset(Dataset):
     def __init__(self, en_path, fr_path):
         self.en_sentences = self.read_file(en_path)
@@ -66,14 +65,13 @@ class EnFrDataset(Dataset):
     def __getitem__(self, idx):
         return self.en_sentences[idx], self.fr_sentences[idx]
 
-# 2. Xây dựng Vocabulary (Viết lại không dùng torchtext)
+#Xây dựng Vocabulary 
 def build_vocabularies(train_dataset):
     print("Đang xây dựng từ điển (Vocabulary)...")
     
     counter_en = Counter()
     counter_fr = Counter()
     
-    # Duyệt qua data để đếm từ
     for en, fr in train_dataset:
         counter_en.update(tokenize_en(en))
         counter_fr.update(tokenize_fr(fr))
@@ -106,7 +104,6 @@ def create_collate_fn(vocab_en, vocab_fr):
         return src_batch, trg_batch, torch.tensor(src_lens)
     return collate_fn
 
-# Hàm chính
 def get_dataloaders():
     import os
     # Tạo dummy data nếu chưa có file
@@ -117,7 +114,6 @@ def get_dataloaders():
         dummy_fr = ["bonjour le monde", "bonjour", "comment ca va"] * 100
         with open(TRAIN_EN_PATH, 'w', encoding='utf-8') as f: f.write('\n'.join(dummy_en))
         with open(TRAIN_FR_PATH, 'w', encoding='utf-8') as f: f.write('\n'.join(dummy_fr))
-        # Tạo luôn val/test giả để code không lỗi
         with open(VAL_EN_PATH, 'w', encoding='utf-8') as f: f.write('\n'.join(dummy_en[:10]))
         with open(VAL_FR_PATH, 'w', encoding='utf-8') as f: f.write('\n'.join(dummy_fr[:10]))
         with open(TEST_EN_PATH, 'w', encoding='utf-8') as f: f.write('\n'.join(dummy_en[:10]))
