@@ -24,7 +24,7 @@ def tokenize_en(text):
 def tokenize_fr(text):
     return [tok.text for tok in spacy_fr.tokenizer(text)]
 
-# Class Vocab tùy chỉnh để thay thế torchtext.vocab
+# --- Vocab ---
 class Vocab:
     def __init__(self, frequency_dict, specials, max_tokens):
         self.itos = list(specials) # Index to String
@@ -47,7 +47,7 @@ class Vocab:
     def set_default_index(self, index):
         self.default_index = index
 
-#Dataset Class
+#--- Dataset Class ---
 class EnFrDataset(Dataset):
     def __init__(self, en_path, fr_path):
         self.en_sentences = self.read_file(en_path)
@@ -65,7 +65,7 @@ class EnFrDataset(Dataset):
     def __getitem__(self, idx):
         return self.en_sentences[idx], self.fr_sentences[idx]
 
-#Xây dựng Vocabulary 
+#--- Xây dựng Vocabulary ---
 def build_vocabularies(train_dataset):
     print("Đang xây dựng từ điển (Vocabulary)...")
     
@@ -78,13 +78,13 @@ def build_vocabularies(train_dataset):
         
     specials = ['<unk>', '<pad>', '<sos>', '<eos>']
     
-    # Tạo object Vocab
+    # Tạo Vocab
     vocab_en = Vocab(counter_en, specials=specials, max_tokens=INPUT_DIM)
     vocab_fr = Vocab(counter_fr, specials=specials, max_tokens=OUTPUT_DIM)
     
     return vocab_en, vocab_fr
 
-# 3. Collate Function
+# --- Collate Function ---
 def create_collate_fn(vocab_en, vocab_fr):
     def collate_fn(batch):
         src_batch, trg_batch = [], []
