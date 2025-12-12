@@ -88,15 +88,14 @@ if __name__ == "__main__":
     model.apply(init_weights)
     
     optimizer = optim.Adam(model.parameters(), lr=LEARNING_RATE, weight_decay=1e-5)
-    # Label smoothing to reduce overfitting
+    # Label smoothing
     criterion = nn.CrossEntropyLoss(ignore_index=TRG_PAD_IDX, label_smoothing=0.1)
-    # LR scheduler to adapt learning rate
+    # LR scheduler giảm  learning rate
     scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, mode='min', factor=0.5, patience=2, verbose=True)
     
     # Kích hoạt Early Stopping
     early_stopper = EarlyStopping(patience=3)
 
-    # List để lưu lịch sử Loss phục vụ vẽ biểu đồ
     train_losses = []
     valid_losses = []
 
