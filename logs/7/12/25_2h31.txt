@@ -1,0 +1,174 @@
+Dataset Size: 29000 câu
+        --> Đã lưu model tốt nhất (Val Loss giảm còn 4.877)
+Epoch: 01 | Time: 1m 24s
+        Train Loss: 5.110 | Val Loss: 4.877
+        Train PPL: 165.745 | Val PPL: 131.269
+        --> Đã lưu model tốt nhất (Val Loss giảm còn 4.570)
+Epoch: 02 | Time: 1m 8s
+        Train Loss: 4.291 | Val Loss: 4.570
+        Train PPL: 73.060 | Val PPL: 96.592
+        --> Đã lưu model tốt nhất (Val Loss giảm còn 4.370)
+Epoch: 03 | Time: 1m 8s
+        Train Loss: 3.898 | Val Loss: 4.370
+        Train PPL: 49.314 | Val PPL: 79.026
+        --> Đã lưu model tốt nhất (Val Loss giảm còn 4.226)
+Epoch: 04 | Time: 1m 7s
+        Train Loss: 3.615 | Val Loss: 4.226
+        Train PPL: 37.145 | Val PPL: 68.461
+        --> Đã lưu model tốt nhất (Val Loss giảm còn 4.064)
+Epoch: 05 | Time: 1m 8s
+        Train Loss: 3.362 | Val Loss: 4.064
+        Train PPL: 28.846 | Val PPL: 58.234
+        --> Đã lưu model tốt nhất (Val Loss giảm còn 3.933)
+Epoch: 06 | Time: 1m 8s
+        Train Loss: 3.104 | Val Loss: 3.933
+        Train PPL: 22.293 | Val PPL: 51.085
+        --> Đã lưu model tốt nhất (Val Loss giảm còn 3.790)
+Epoch: 07 | Time: 1m 7s
+        Train Loss: 2.879 | Val Loss: 3.790
+        Train PPL: 17.790 | Val PPL: 44.243
+        --> Đã lưu model tốt nhất (Val Loss giảm còn 3.668)
+Epoch: 08 | Time: 1m 8s
+        Train Loss: 2.706 | Val Loss: 3.668
+        Train PPL: 14.966 | Val PPL: 39.175
+        --> Đã lưu model tốt nhất (Val Loss giảm còn 3.647)
+Epoch: 09 | Time: 1m 8s
+        Train Loss: 2.508 | Val Loss: 3.647
+        Train PPL: 12.275 | Val PPL: 38.360
+        --> Đã lưu model tốt nhất (Val Loss giảm còn 3.534)
+Epoch: 10 | Time: 1m 6s
+        Train Loss: 2.360 | Val Loss: 3.534
+        Train PPL: 10.588 | Val PPL: 34.255
+Epoch: 11 | Time: 1m 7s
+        Train Loss: 2.212 | Val Loss: 3.576
+        Train PPL: 9.135 | Val PPL: 35.743
+        --> Đã lưu model tốt nhất (Val Loss giảm còn 3.517)
+Epoch: 12 | Time: 1m 6s
+        Train Loss: 2.508 | Val Loss: 3.647
+        Train PPL: 12.275 | Val PPL: 38.360
+        --> Đã lưu model tốt nhất (Val Loss giảm còn 3.534)
+Epoch: 10 | Time: 1m 6s
+        Train Loss: 2.360 | Val Loss: 3.534
+        Train PPL: 10.588 | Val PPL: 34.255
+Epoch: 11 | Time: 1m 7s
+        Train Loss: 2.212 | Val Loss: 3.576
+        Train PPL: 9.135 | Val PPL: 35.743
+        --> Đã lưu model tốt nhất (Val Loss giảm còn 3.517)
+        Train Loss: 2.508 | Val Loss: 3.647
+        Train PPL: 12.275 | Val PPL: 38.360
+        --> Đã lưu model tốt nhất (Val Loss giảm còn 3.534)
+Epoch: 10 | Time: 1m 6s
+        Train Loss: 2.360 | Val Loss: 3.534
+        Train PPL: 10.588 | Val PPL: 34.255
+Epoch: 11 | Time: 1m 7s
+        Train Loss: 2.212 | Val Loss: 3.576
+        Train PPL: 9.135 | Val PPL: 35.743
+        Train Loss: 2.508 | Val Loss: 3.647
+        Train PPL: 12.275 | Val PPL: 38.360
+        --> Đã lưu model tốt nhất (Val Loss giảm còn 3.534)
+Epoch: 10 | Time: 1m 6s
+        Train Loss: 2.360 | Val Loss: 3.534
+        Train PPL: 10.588 | Val PPL: 34.255
+Epoch: 11 | Time: 1m 7s
+        Train Loss: 2.508 | Val Loss: 3.647
+        Train PPL: 12.275 | Val PPL: 38.360
+        --> Đã lưu model tốt nhất (Val Loss giảm còn 3.534)
+Epoch: 10 | Time: 1m 6s
+        Train Loss: 2.360 | Val Loss: 3.534
+        Train PPL: 10.588 | Val PPL: 34.255
+        Train Loss: 2.508 | Val Loss: 3.647
+        Train PPL: 12.275 | Val PPL: 38.360
+        --> Đã lưu model tốt nhất (Val Loss giảm còn 3.534)
+Epoch: 10 | Time: 1m 6s
+        Train Loss: 2.360 | Val Loss: 3.534
+        Train Loss: 2.508 | Val Loss: 3.647
+        Train PPL: 12.275 | Val PPL: 38.360
+        --> Đã lưu model tốt nhất (Val Loss giảm còn 3.534)
+        Train Loss: 2.508 | Val Loss: 3.647
+        Train PPL: 12.275 | Val PPL: 38.360
+        --> Đã lưu model tốt nhất (Val Loss giảm còn 3.534)
+Epoch: 10 | Time: 1m 6s
+        Train Loss: 2.360 | Val Loss: 3.534
+        Train PPL: 10.588 | Val PPL: 34.255
+Epoch: 11 | Time: 1m 7s
+        Train Loss: 2.508 | Val Loss: 3.647
+        Train PPL: 12.275 | Val PPL: 38.360
+        --> Đã lưu model tốt nhất (Val Loss giảm còn 3.534)
+Epoch: 10 | Time: 1m 6s
+        Train Loss: 2.360 | Val Loss: 3.534
+Epoch: 10 | Time: 1m 6s
+        Train Loss: 2.360 | Val Loss: 3.534
+        Train Loss: 2.360 | Val Loss: 3.534
+        Train PPL: 10.588 | Val PPL: 34.255
+Epoch: 11 | Time: 1m 7s
+        Train Loss: 2.212 | Val Loss: 3.576
+        Train PPL: 9.135 | Val PPL: 35.743
+        --> Đã lưu model tốt nhất (Val Loss giảm còn 3.517)
+Epoch: 12 | Time: 1m 6s
+        Train Loss: 2.100 | Val Loss: 3.517
+        Train PPL: 8.166 | Val PPL: 33.670
+        --> Đã lưu model tốt nhất (Val Loss giảm còn 3.443)
+Epoch: 13 | Time: 1m 6s
+        Train Loss: 1.976 | Val Loss: 3.443
+        Train PPL: 7.216 | Val PPL: 31.283
+        --> Đã lưu model tốt nhất (Val Loss giảm còn 3.425)
+Epoch: 14 | Time: 1m 33s
+        Train Loss: 2.212 | Val Loss: 3.576
+        Train PPL: 9.135 | Val PPL: 35.743
+        --> Đã lưu model tốt nhất (Val Loss giảm còn 3.517)
+Epoch: 12 | Time: 1m 6s
+        Train Loss: 2.100 | Val Loss: 3.517
+        Train PPL: 8.166 | Val PPL: 33.670
+        --> Đã lưu model tốt nhất (Val Loss giảm còn 3.443)
+Epoch: 13 | Time: 1m 6s
+        Train Loss: 1.976 | Val Loss: 3.443
+        Train PPL: 7.216 | Val PPL: 31.283
+        --> Đã lưu model tốt nhất (Val Loss giảm còn 3.425)
+Epoch: 14 | Time: 1m 33s
+        --> Đã lưu model tốt nhất (Val Loss giảm còn 3.517)
+Epoch: 12 | Time: 1m 6s
+        Train Loss: 2.100 | Val Loss: 3.517
+        Train PPL: 8.166 | Val PPL: 33.670
+        --> Đã lưu model tốt nhất (Val Loss giảm còn 3.443)
+Epoch: 13 | Time: 1m 6s
+        Train Loss: 1.976 | Val Loss: 3.443
+        Train PPL: 7.216 | Val PPL: 31.283
+        --> Đã lưu model tốt nhất (Val Loss giảm còn 3.425)
+Epoch: 14 | Time: 1m 33s
+        --> Đã lưu model tốt nhất (Val Loss giảm còn 3.443)
+Epoch: 13 | Time: 1m 6s
+        Train Loss: 1.976 | Val Loss: 3.443
+        Train PPL: 7.216 | Val PPL: 31.283
+        --> Đã lưu model tốt nhất (Val Loss giảm còn 3.425)
+Epoch: 14 | Time: 1m 33s
+        Train Loss: 1.849 | Val Loss: 3.425
+        Train PPL: 7.216 | Val PPL: 31.283
+        --> Đã lưu model tốt nhất (Val Loss giảm còn 3.425)
+Epoch: 14 | Time: 1m 33s
+        Train Loss: 1.849 | Val Loss: 3.425
+Epoch: 14 | Time: 1m 33s
+        Train Loss: 1.849 | Val Loss: 3.425
+        Train PPL: 6.356 | Val PPL: 30.725
+        Train Loss: 1.849 | Val Loss: 3.425
+        Train PPL: 6.356 | Val PPL: 30.725
+        Train PPL: 6.356 | Val PPL: 30.725
+        --> Đã lưu model tốt nhất (Val Loss giảm còn 3.391)
+Epoch: 15 | Time: 2m 6s
+        Train Loss: 1.762 | Val Loss: 3.391
+        Train PPL: 5.824 | Val PPL: 29.683
+Epoch: 16 | Time: 1m 55s
+        Train Loss: 1.663 | Val Loss: 3.399
+        Train PPL: 5.277 | Val PPL: 29.923
+Epoch: 17 | Time: 1m 41s
+        Train Loss: 1.578 | Val Loss: 3.450
+        Train PPL: 4.846 | Val PPL: 31.510
+        --> Đã lưu model tốt nhất (Val Loss giảm còn 3.362)
+Epoch: 18 | Time: 1m 15s
+        Train Loss: 1.500 | Val Loss: 3.362
+        Train PPL: 4.481 | Val PPL: 28.836
+Epoch: 19 | Time: 1m 15s
+        Train Loss: 1.402 | Val Loss: 3.435
+        Train PPL: 4.065 | Val PPL: 31.032
+Epoch: 20 | Time: 1m 15s
+        Train Loss: 1.327 | Val Loss: 3.470
+        Train PPL: 3.768 | Val PPL: 32.127
