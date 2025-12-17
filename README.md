@@ -7,7 +7,7 @@ Dịch máy (Machine Translation) từ tiếng Anh sang tiếng Pháp sử dụn
 - Tổng quan đề tài và kiến trúc mô hình
 - Cấu trúc dữ liệu và chuẩn bị dữ liệu
 - Hướng dẫn cài đặt và chạy huấn luyện (`train.py`)
-- Suy luận/dự đoán với mô hình đã huấn luyện (`predict.py`)
+- Suy luận/dự đoán với mô hình đã huấn luyện (`test.py`)
 - Phân tích, đánh giá và kết quả
 - Ghi chú môi trường, CUDA và xử lý sự cố
 
@@ -95,6 +95,5 @@ model.py          # Định nghĩa Encoder–Decoder LSTM
 test.py        	  # Suy luận: dịch câu mới
 train.py          # Huấn luyện mô hình
 charts/           # Biểu đồ/ảnh theo dõi huấn luyện
-logs/             # Log huấn luyện (theo phiên)
 models/           # Lưu checkpoint/mô hình tốt nhất
 ```
