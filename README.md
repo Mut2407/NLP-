@@ -24,7 +24,7 @@ Xem chi tiết hiện thực trong `model.py` và các tham số trong `config.p
 
 ## 2) Cấu trúc dữ liệu
 
- Dataset - `Data/`:
+Dataset - `Data/`:
 
 ```
 Data/
@@ -53,7 +53,7 @@ Data/
 
 ## 3) Yêu cầu môi trường
 
-- Python 3.9+ 
+- Python 3.9+
 - PyTorch (CPU hoặc CUDA)
 - Các thư viện chuẩn: `numpy`, `tqdm`, ...
 
@@ -79,10 +79,10 @@ python .\train.py
 Sau khi có mô hình, dịch câu mới:
 
 ```bash
-python .\predict.py
+python .\test.py
 ```
 
-- Sửa nội dung câu nguồn cần dịch trong `predict.py`.
+- Sửa nội dung câu nguồn cần dịch trong `test.py`.
 - Script sẽ tải `models/best_model.pth` và in ra câu dịch tiếng Pháp.
 
 ## 8) Cấu trúc dự án
@@ -92,7 +92,7 @@ check_cuda.py     # Kiểm tra khả dụng CUDA
 config.py         # Tham số huấn luyện/suy luận
 data_utils.py     # Xử lý dữ liệu, từ điển, dataloader
 model.py          # Định nghĩa Encoder–Decoder LSTM
-predict.py        # Suy luận: dịch câu mới
+test.py        	  # Suy luận: dịch câu mới
 train.py          # Huấn luyện mô hình
 charts/           # Biểu đồ/ảnh theo dõi huấn luyện
 logs/             # Log huấn luyện (theo phiên)
