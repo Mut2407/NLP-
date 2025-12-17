@@ -7,7 +7,7 @@ Dịch máy (Machine Translation) từ tiếng Anh sang tiếng Pháp sử dụn
 - Tổng quan đề tài và kiến trúc mô hình
 - Cấu trúc dữ liệu và chuẩn bị dữ liệu
 - Hướng dẫn cài đặt và chạy huấn luyện (`train.py`)
-- Suy luận/dự đoán với mô hình đã huấn luyện (`predict.py`)
+- Suy luận/dự đoán với mô hình đã huấn luyện (`test.py`)
 - Phân tích, đánh giá và kết quả
 - Ghi chú môi trường, CUDA và xử lý sự cố
 
@@ -79,10 +79,10 @@ python .\train.py
 Sau khi có mô hình, dịch câu mới:
 
 ```bash
-python .\predict.py
+python .\test.py
 ```
 
-- Sửa nội dung câu nguồn cần dịch trong `predict.py`.
+- Sửa nội dung câu nguồn cần dịch trong `test.py`.
 - Script sẽ tải `models/best_model.pth` và in ra câu dịch tiếng Pháp.
 
 ## 8) Cấu trúc dự án
@@ -92,9 +92,8 @@ check_cuda.py     # Kiểm tra khả dụng CUDA
 config.py         # Tham số huấn luyện/suy luận
 data_utils.py     # Xử lý dữ liệu, từ điển, dataloader
 model.py          # Định nghĩa Encoder–Decoder LSTM
-predict.py        # Suy luận: dịch câu mới
+test.py        # Suy luận: dịch câu mới
 train.py          # Huấn luyện mô hình
 charts/           # Biểu đồ/ảnh theo dõi huấn luyện
-logs/             # Log huấn luyện (theo phiên)
 models/           # Lưu checkpoint/mô hình tốt nhất
 ```
