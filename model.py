@@ -53,12 +53,11 @@ class Decoder(nn.Module):
         output, (hidden, cell) = self.rnn(embedded, (hidden, cell))
         
         # THAY ĐỔI: output shape = [1, batch size, hid_dim]
-        # Bỏ qua bước tính attention và concat
         prediction = self.fc_out(output.squeeze(0)) 
         
         return prediction, hidden, cell
 
-# --- SEQ2SEQ (Kết hợp Encoder-Decoder Không Attention) ---
+# --- SEQ2SEQ (No Attention) ---
 class Seq2Seq(nn.Module):
     def __init__(self, encoder, decoder, device):
         super().__init__()
@@ -74,13 +73,12 @@ class Seq2Seq(nn.Module):
         outputs = torch.zeros(trg_len, batch_size, trg_vocab_size).to(self.device)
         
         # 1. Encoder: Chỉ lấy hidden và cell để làm Context Vector ban đầu
-        # encoder_outputs bị bỏ qua vì không có Attention để dùng nó
         _, hidden, cell = self.encoder(src, src_len)
         
         input = trg[0, :]
 
         for t in range(1, trg_len):
-            # 2. Decoder: Không truyền encoder_outputs và mask nữa
+            # 2. Decoder: Không truyền encoder_outputs và mask 
             output, hidden, cell = self.decoder(input, hidden, cell)
             outputs[t] = output
 

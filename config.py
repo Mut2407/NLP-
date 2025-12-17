@@ -5,8 +5,8 @@ TRAIN_EN_PATH = 'Data/train/train.en'
 TRAIN_FR_PATH = 'Data/train/train.fr'
 VAL_EN_PATH = 'Data/val/val.en'
 VAL_FR_PATH = 'Data/val/val.fr'
-TEST_EN_PATH = 'Data/test/test2016/test_2016_flickr.en'
-TEST_FR_PATH = 'Data/test/test2016/test_2016_flickr.fr'
+TEST_EN_PATH = 'Data/test/test2017/test_2017_mscoco.en'
+TEST_FR_PATH = 'Data/test/test2017/test_2017_mscoco.fr'
 
 # Cấu hình Model 
 INPUT_DIM = 10000  
