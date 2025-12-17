@@ -138,7 +138,7 @@ if __name__ == "__main__":
             print("Dừng huấn luyện sớm do Loss không giảm (Early Stopping)!")
             break
 
-    # --- VẼ BIỂU ĐỒ (Yêu cầu Tiêu chí số 5 - Điểm 1.0) ---
+    # --- VẼ BIỂU ĐỒ ---
     print("\nBiểu đồ Loss...")
     plt.figure(figsize=(10, 5))
     plt.plot(train_losses, label='Train Loss', marker='o')

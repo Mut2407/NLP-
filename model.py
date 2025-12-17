@@ -3,9 +3,7 @@ import torch.nn as nn
 import random
 from torch.nn.utils.rnn import pack_padded_sequence, pad_packed_sequence
 
-# --- ENCODER (Giữ nguyên) ---
-# Dù không dùng outputs cho attention, ta vẫn giữ nguyên cấu trúc
-# để đảm bảo hidden/cell được tính toán đúng qua LSTM
+# --- ENCODER  ---
 class Encoder(nn.Module):
     def __init__(self, input_dim, emb_dim, hid_dim, n_layers, dropout):
         super().__init__()
@@ -27,7 +25,7 @@ class Encoder(nn.Module):
         # Trả về hidden, cell làm context vector khởi tạo cho Decoder
         return outputs, hidden, cell
 
-# --- DECODER (Đã tháo Attention) ---
+# --- DECODER ---
 class Decoder(nn.Module):
     def __init__(self, output_dim, emb_dim, hid_dim, n_layers, dropout):
         super().__init__()
